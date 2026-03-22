@@ -1,0 +1,28 @@
+{
+  "name": "email-template-engine",
+  "version": "1.0.0",
+  "description": "Generate professional emails from templates with variable substitution and AI enhancement",
+  "main": "dist/index.js",
+  "bin": {
+    "email-template": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts"
+  },
+  "keywords": ["email", "template", "cli", "automation"],
+  "author": "The BookMaster",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^11.1.0",
+    "inquirer": "^9.2.12",
+    "handlebars": "^4.7.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/inquirer": "^9.0.7",
+    "@types/handlebars": "^4.1.0",
+    "typescript": "^5.3.3"
+  }
+}
