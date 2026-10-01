@@ -13,7 +13,7 @@ A CLI tool for generating professional emails from templates with variable subst
 ## Installation
 
 ```bash
-npm install -g email-template-engine
+npm install -g github:Retsumdk/email-template-engine
 ```
 
 ## Usage
