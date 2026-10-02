@@ -77,8 +77,11 @@ program
   .command('list')
   .description('List all templates in current directory')
   .action(() => {
-    const files = fs.readdirSync('.');
-    const templates = files.filter(f => f.endsWith('.json'));
+    const files = fs.readdirSync('.', { withFileTypes: true });
+    const skip = new Set(['package.json', 'package-lock.json', 'bun.lock', 'tsconfig.json', 'tsconfig.build.json']);
+    const templates = files
+      .filter(f => f.isFile() && f.name.endsWith('.json') && !skip.has(f.name))
+      .map(f => f.name);
     
     if (templates.length === 0) {
       console.log('No templates found.');
